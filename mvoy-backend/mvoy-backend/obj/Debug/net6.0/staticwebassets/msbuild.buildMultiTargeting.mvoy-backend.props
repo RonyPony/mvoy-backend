@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\mvoy-backend.props" />
+</Project>

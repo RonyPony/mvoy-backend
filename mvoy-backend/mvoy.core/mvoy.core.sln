@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvoy.core", "mvoy.core\mvoy.core.csproj", "{08B72B1F-F240-48DF-9DF8-15EA7285AD37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08B72B1F-F240-48DF-9DF8-15EA7285AD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B72B1F-F240-48DF-9DF8-15EA7285AD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B72B1F-F240-48DF-9DF8-15EA7285AD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B72B1F-F240-48DF-9DF8-15EA7285AD37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9ABC27B0-504B-4EF1-A2A5-4D5AD3293EF2}
+	EndGlobalSection
+EndGlobal

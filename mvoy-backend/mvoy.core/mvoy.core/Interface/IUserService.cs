@@ -10,7 +10,7 @@ namespace mvoy.core.Interface
     public interface IUserService
     {
         public IEnumerable<User> GetAllUsers();
-        public Task<int> SaveUser(User user);
-        public Task<int> DeleteUser(string userId);
+        public Task<bool> SaveUser(User user);
+        public Task<int> DeleteUser(Guid userId);
     }
 }

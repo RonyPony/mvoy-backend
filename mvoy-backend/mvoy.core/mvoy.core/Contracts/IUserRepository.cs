@@ -1,4 +1,5 @@
-﻿using mvoy.core.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using mvoy.core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace mvoy.core.Contracts
         /// Register a new record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<int> CreateUser(User User);
+        public Task<bool> CreateUser(User User);
 
         public IEnumerable<User> getAllUsers();
 
@@ -27,6 +28,6 @@ namespace mvoy.core.Contracts
         ///  Remove a specific record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<bool> RemoveUser(string UserId);
+        public Task<int> RemoveUser(Guid UserId);
     }
 }

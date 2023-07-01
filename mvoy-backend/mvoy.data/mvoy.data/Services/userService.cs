@@ -1,6 +1,7 @@
 ﻿using mvoy.core.Contracts;
 using mvoy.core.Interface;
 using mvoy.core.Models;
+using mvoy.data.DataContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,17 @@ using System.Threading.Tasks;
 
 namespace mvoy.data.Services
 {
-    internal class UserService : IUserService
+    public class UserService : IUserService
     {
         private readonly IUserRepository _repo;
-        public Task<bool> DeleteUser(string userId)
+        
+        public UserService(IUserRepository rep) 
+        {
+            _repo= rep;
+        }
+        
+
+        public Task<int> DeleteUser(Guid userId)
         {
            return _repo.RemoveUser(userId);
         }
@@ -22,14 +30,14 @@ namespace mvoy.data.Services
             return _repo.getAllUsers();
         }
 
-        public async Task<int> SaveUser(User user)
+        public async Task<bool> SaveUser(User user)
         {
             return await _repo.CreateUser(user);
         }
 
-        Task<int> IUserService.DeleteUser(string userId)
+        async Task<int> IUserService.DeleteUser(Guid userId)
         {
-            throw new NotImplementedException();
+            return await _repo.RemoveUser(userId);
         }
     }
 }

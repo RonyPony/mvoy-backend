@@ -11,26 +11,24 @@ namespace mvoy.core.Models
 {
         [Table("users")]
         public class User
-        {
-        
-
+        {        
             [Key]
-            public int Id { get; set; }
+            public Guid Id { get; set; }
             [Required]
             [Column("cedula",TypeName ="varchar(80)")]
             public string cedula { get; set; }
             [Required]
             [Column("name", TypeName = "varchar(80)")]
             public string Name { get; set; }
-
             [Required]
             [Column("lastname")]
             public string lastname{ get; set; }
-        [Column("creationDate", TypeName = "varchar(80)")]
+        [Required]
+            [Column("creationDate", TypeName = "varchar(80)")]        
         public DateTime CreationDate;
-        [Column("isDeleted", TypeName = "binary")]
-        public bool IsDeleted;
-
+        [Required]
+            [Column("isDeleted", TypeName = "binary")]
+            public bool IsDeleted;
 
     }
     

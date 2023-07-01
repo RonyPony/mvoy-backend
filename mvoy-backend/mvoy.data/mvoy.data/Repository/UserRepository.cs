@@ -1,4 +1,5 @@
-﻿using mvoy.core.Contracts;
+﻿using Microsoft.AspNetCore.Mvc;
+using mvoy.core.Contracts;
 using mvoy.core.Models;
 using mvoy.data.DataContext;
 using System;
@@ -16,19 +17,17 @@ namespace mvoy.data.Repository
         {
             _context = ctx;
         }
-        public async Task<int> CreateUser(User user)
+        public async Task<bool> CreateUser(User user)
         {
             try
             {
-                user.CreationDate = DateTime.Now;
-                user.IsDeleted = false;
                 _context.users.Add(user);
-                var x = await _context.SaveChangesAsync();
-                return x;
+                
+                return await _context.SaveChangesAsync()==1;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return 0;
+                return false;
             }
         }
 
@@ -46,9 +45,28 @@ namespace mvoy.data.Repository
             }
         }
 
-        public Task<bool> RemoveUser(string UserId)
+        public async Task<int> RemoveUser(Guid UserId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                try
+                {
+                    User user = await _context.users.FindAsync(UserId);
+                    _context.users.Remove(user);
+                    _context.SaveChanges();
+                    return 1;
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public Task UpdateUser(User User)

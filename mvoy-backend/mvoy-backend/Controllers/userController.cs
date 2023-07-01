@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using mvoy.core.Interface;
 using mvoy.core.Models;
+using mvoy.data.DTOs;
+using System.Xml.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -32,9 +34,23 @@ namespace mvoy_backend.Controllers
 
         // POST api/<userController>
         [HttpPost]
-        public async Task<int> PostAsync([FromBody] User user)
+        public async Task<IActionResult> PostAsync([FromBody] UserDto user)
         {
-            return await _userService.SaveUser(user);
+            User usr= new User();
+            usr.Name= user.Name;
+            usr.lastname= user.lastname;
+            usr.cedula= user.cedula;
+            usr.IsDeleted= false;
+            usr.CreationDate= DateTime.Now;
+
+            if (await _userService.SaveUser(usr))
+            {
+                return Ok(usr);
+            }
+            else
+            {
+                return StatusCode(500,"Error creating new user");
+            }
         }
 
         // PUT api/<userController>/5
@@ -45,9 +61,9 @@ namespace mvoy_backend.Controllers
 
         // DELETE api/<userController>/5
         [HttpDelete("{id}")]
-        public async Task<int> DeleteAsync(int id)
+        public async Task<int> DeleteAsync(Guid id)
         {
-            return await _userService.DeleteUser(id.ToString());
+            return await _userService.DeleteUser(id);
         }
     }
 }

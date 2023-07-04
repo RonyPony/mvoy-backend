@@ -37,5 +37,6 @@ namespace mvoy.data.DataContext
         /// Get or set context's reports
         /// </summary>
         public DbSet<User> users { get; set; }
+        public DbSet<UserContactInfo> usersContactInfo { get; set; }
     }
 }

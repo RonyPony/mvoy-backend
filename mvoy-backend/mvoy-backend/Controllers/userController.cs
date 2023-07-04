@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using mvoy.core.Enums;
 using mvoy.core.Interface;
 using mvoy.core.Models;
 using mvoy.data.DTOs;
@@ -34,22 +35,38 @@ namespace mvoy_backend.Controllers
 
         // POST api/<userController>
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] UserDto user)
+
+        public async Task<IActionResult> PostAsync([FromBody] RegisterDto user)
         {
+            UserContactInfo contactInfo= new UserContactInfo();
+            contactInfo.address = user.address;
+            contactInfo.phoneNumber = user.phoneNumber;
+            contactInfo.relativePhoneNumber = user.relativePhoneNumber;
+            contactInfo.relativeName = user.relativeName;
+            
             User usr= new User();
             usr.Name= user.Name;
+            usr.middleName = user.middleName;
             usr.lastname= user.lastname;
             usr.cedula= user.cedula;
             usr.IsDeleted= false;
             usr.CreationDate= DateTime.Now;
+            usr.birthDate = user.birthDate;
+            usr.gender = user.gender;
+            usr.email= user.email;
+            usr.UserKind = UserType.Customer;
+            usr.contactInfoId = await _userService.createContactInfo(contactInfo);
 
             if (await _userService.SaveUser(usr))
             {
+                
                 return Ok(usr);
             }
             else
             {
+                await _userService.removeContactInfo(usr.contactInfoId);
                 return StatusCode(500,"Error creating new user");
+
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using mvoy.core.Contracts;
 using mvoy.core.Models;
 using mvoy.data.DataContext;
@@ -27,7 +28,23 @@ namespace mvoy.data.Repository
             }
             catch (Exception ex)
             {
+                _context.ChangeTracker.Clear();
                 return false;
+            }
+        }
+
+        public async Task<int> CreateUserContactInfo(UserContactInfo UserInfo)
+        {
+            try
+            {
+                _context.usersContactInfo.Add(UserInfo);
+
+                await _context.SaveChangesAsync();
+                return UserInfo.Id;
+            }
+            catch (Exception ex)
+            {
+                return 0;
             }
         }
 
@@ -43,6 +60,26 @@ namespace mvoy.data.Repository
 
                 throw;
             }
+        }
+
+        public async Task removeContactInfo(int contactInfoId)
+        {
+            try
+            {
+                UserContactInfo ci = await _context.usersContactInfo.FindAsync(contactInfoId);
+                ////_context.Entry(ci).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+                ci.isDeleted = true;
+                _context.Update(ci);
+                _context.SaveChanges();
+                //_context.Entry(ci).State = EntityState.Deleted;
+                //_context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+            
         }
 
         public async Task<int> RemoveUser(Guid UserId)

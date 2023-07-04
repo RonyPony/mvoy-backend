@@ -18,7 +18,11 @@ namespace mvoy.data.Services
         {
             _repo= rep;
         }
-        
+
+        public Task<int> createContactInfo(UserContactInfo user)
+        {
+            return _repo.CreateUserContactInfo(user);
+        }
 
         public Task<int> DeleteUser(Guid userId)
         {
@@ -28,6 +32,11 @@ namespace mvoy.data.Services
         public IEnumerable<User> GetAllUsers()
         {
             return _repo.getAllUsers();
+        }
+
+        public Task removeContactInfo(int contactInfoId)
+        {
+            return _repo.removeContactInfo(contactInfoId);
         }
 
         public async Task<bool> SaveUser(User user)

@@ -12,5 +12,7 @@ namespace mvoy.core.Interface
         public IEnumerable<User> GetAllUsers();
         public Task<bool> SaveUser(User user);
         public Task<int> DeleteUser(Guid userId);
+        public Task<int> createContactInfo(UserContactInfo user);
+        Task removeContactInfo(int contactInfoId);
     }
 }

@@ -16,6 +16,12 @@ namespace mvoy.core.Contracts
         /// <param name="branch">Branch's request</param>
         public Task<bool> CreateUser(User User);
 
+        /// <summary>
+        /// Register a new record of branch data.
+        /// </summary>
+        /// <param name="branch">Branch's request</param>
+        public Task<int> CreateUserContactInfo(UserContactInfo UserInfo);
+
         public IEnumerable<User> getAllUsers();
 
         /// <summary>
@@ -29,5 +35,6 @@ namespace mvoy.core.Contracts
         /// </summary>
         /// <param name="branch">Branch's request</param>
         public Task<int> RemoveUser(Guid UserId);
+        Task removeContactInfo(int contactInfoId);
     }
 }

@@ -22,6 +22,8 @@ builder.Services.AddCors();
 builder.Services.AddDbContext<MvoyContext>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<ITripService, TripService>();
+builder.Services.AddTransient<ITripRepository, TripRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

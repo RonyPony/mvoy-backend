@@ -8,6 +8,7 @@ namespace mvoy.data.DataContext
 {
     public partial class MvoyContext : DbContext
     {
+
         public MvoyContext()
         {
         }
@@ -33,10 +34,12 @@ namespace mvoy.data.DataContext
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
+
         /// <summary>
         /// Get or set context's reports
         /// </summary>
         public DbSet<User> users { get; set; }
         public DbSet<UserContactInfo> usersContactInfo { get; set; }
+        public DbSet<Trip> trips { get; set; }
     }
 }

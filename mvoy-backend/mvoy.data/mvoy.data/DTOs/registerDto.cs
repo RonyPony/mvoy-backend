@@ -23,8 +23,11 @@ namespace mvoy.data.DTOs
         [Column("midName", TypeName = "varchar(80)")]
         public string middleName { get; set; }
         [Required]
-        [Column("lastname")]
-        public string lastname { get; set; }
+        [Column("lastname1")]
+        public string lastname1 { get; set; }
+        [Required]
+        [Column("lastname2")]
+        public string lastname2 { get; set; }
         [Required]
         [Column("birthDate", TypeName = "varchar(80)")]
         public DateTime birthDate { get; set; }

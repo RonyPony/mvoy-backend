@@ -31,6 +31,9 @@ namespace mvoy.core.Models
             [Column("lastname")]
             public string lastname{ get; set; }
             [Required]
+            [Column("lastname2")]
+            public string lastname2 { get; set; }
+            [Required]
             [Column("birthDate", TypeName = "varchar(80)")]
             public DateTime birthDate { get; set; }
             [Required]

@@ -33,6 +33,13 @@ namespace mvoy_backend.Controllers
             return "value";
         }
 
+        // GET api/<userController>/5
+        [HttpGet("{cedula}")]
+        public string GetByCedula(string cedula)
+        {
+            return "value";
+        }
+
         // POST api/<userController>
         [HttpPost]
 
@@ -47,7 +54,8 @@ namespace mvoy_backend.Controllers
             User usr= new User();
             usr.Name= user.Name;
             usr.middleName = user.middleName;
-            usr.lastname= user.lastname;
+            usr.lastname= user.lastname1;
+            usr.lastname2= user.lastname2;
             usr.cedula= user.cedula;
             usr.IsDeleted= false;
             usr.CreationDate= DateTime.Now;

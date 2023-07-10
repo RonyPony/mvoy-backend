@@ -34,6 +34,7 @@ namespace mvoy.data.Services
             return _repo.getAllUsers();
         }
 
+
         public Task removeContactInfo(int contactInfoId)
         {
             return _repo.removeContactInfo(contactInfoId);

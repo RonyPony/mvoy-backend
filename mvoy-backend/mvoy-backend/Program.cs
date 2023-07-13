@@ -15,15 +15,23 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 IServiceCollection services;
 builder.Services.AddControllers();
+builder.Services.AddDbContext<MvoyContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    //opt.UseNpgsql(builder.Configuration.GetConnectionString("postgres"));
+
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
-builder.Services.AddDbContext<MvoyContext>();
-builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IVehicleService, VehicleService>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<ITripService, TripService>();
 builder.Services.AddTransient<ITripRepository, TripRepository>();
+builder.Services.AddTransient<IVehicleRepository, VehicleRepository>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

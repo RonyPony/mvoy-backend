@@ -16,12 +16,15 @@ namespace mvoy.core.Models
             [Key]
             public Guid Id { get; set; }
             public int contactInfoId { get; set; }
+            public bool isDriver { get; set; }
             [Required]
             [Column("cedula",TypeName ="varchar(80)")]
             public string cedula { get; set; }
             [Required]
             [Column("email", TypeName = "varchar(80)")]
             public string email { get; set; }
+            [Column("phone", TypeName = "varchar(80)")]
+            public string phone { get; set; }
             [Required]
             [Column("name", TypeName = "varchar(80)")]
             public string Name { get; set; }

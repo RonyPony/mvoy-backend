@@ -4,3 +4,7 @@
 *.dll
 *.pdb
 *.vsidx
+*.dll
+*.exe
+*.pdb
+*.cache

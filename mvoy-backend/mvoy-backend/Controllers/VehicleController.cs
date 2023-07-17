@@ -45,13 +45,24 @@ namespace mvoy_backend.Controllers
         // POST api/<VehicleController>
         [HttpPost]
 
-        public async Task<IActionResult> PostAsync([FromBody] Vehicle vehicle)
+        public async Task<IActionResult> PostAsync([FromBody] vehicleDto vehicle)
         {
             if (vehicle==null)
             {
                 return BadRequest();
             }
-            Vehicle created = await _vehicleService.SaveVehicle(vehicle);
+            Vehicle newVehicle = new Vehicle();
+            newVehicle.modelo = vehicle.modelo;
+            newVehicle.placa = vehicle.placa;
+            newVehicle.chasis = vehicle.chasis;
+            newVehicle.license= vehicle.license;
+            newVehicle.color = vehicle.color;
+            newVehicle.marca = vehicle.marca;
+            newVehicle.ownerId = vehicle.ownerId;
+            newVehicle.seguro = vehicle.seguro;
+            newVehicle.tieneSeguro = vehicle.tieneSeguro;
+            newVehicle.year = vehicle.year;
+            Vehicle created = await _vehicleService.SaveVehicle(newVehicle);
             if (created.Id!=null)
             {
 

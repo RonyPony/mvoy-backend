@@ -23,8 +23,6 @@ namespace mvoy.core.Models
             [Required]
             [Column("email", TypeName = "varchar(80)")]
             public string email { get; set; }
-            [Column("phone", TypeName = "varchar(80)")]
-            public string phone { get; set; }
             [Required]
             [Column("name", TypeName = "varchar(80)")]
             public string Name { get; set; }
@@ -38,7 +36,7 @@ namespace mvoy.core.Models
             public string lastname2 { get; set; }
             [Required]
             [Column("birthDate", TypeName = "varchar(80)")]
-            public DateTime birthDate { get; set; }
+            public String birthDate { get; set; }
             [Required]
             [Column("gender", TypeName = "char")]
             public Char gender { get; set; }

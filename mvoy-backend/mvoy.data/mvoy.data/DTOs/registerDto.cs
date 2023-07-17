@@ -30,7 +30,7 @@ namespace mvoy.data.DTOs
         public string lastname2 { get; set; }
         [Required]
         [Column("birthDate", TypeName = "varchar(80)")]
-        public DateTime birthDate { get; set; }
+        public String birthDate { get; set; }
         [Required]
         [Column("gender", TypeName = "char")]
         public Char gender { get; set; }

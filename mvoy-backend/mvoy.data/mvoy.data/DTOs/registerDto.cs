@@ -46,6 +46,7 @@ namespace mvoy.data.DTOs
         [Required]
         [Column("relativePhoneNumber", TypeName = "varchar(80)")]
         public string relativePhoneNumber { get; set; }
+        public string password { get; set; }
 
     }
 }

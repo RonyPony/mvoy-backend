@@ -20,6 +20,7 @@ namespace mvoy_backend.Controllers
     {
         private readonly IUserService _userService;
 
+        public IConfiguration _Configuration;
         public userController(IUserService srv)
         {
             _userService = srv;
@@ -55,7 +56,8 @@ namespace mvoy_backend.Controllers
             contactInfo.phoneNumber = user.phoneNumber;
             contactInfo.relativePhoneNumber = user.relativePhoneNumber;
             contactInfo.relativeName = user.relativeName;
-            
+            UserRole baseRole = new UserRole();
+            baseRole.roleName= "basic1";
             User usr= new User();
             usr.Name= user.Name;
             usr.middleName = user.middleName;
@@ -69,6 +71,8 @@ namespace mvoy_backend.Controllers
             usr.email= user.email;
             usr.UserKind = UserType.Customer;
             usr.contactInfoId = await _userService.createContactInfo(contactInfo);
+            usr.password = user.password;
+            usr.roles = new List<UserRole> { baseRole};
 
             if (await _userService.SaveUser(usr))
             {
@@ -97,13 +101,6 @@ namespace mvoy_backend.Controllers
         }
 
         //Login
-
-        public IConfiguration _Configuration;
-        public userController(IConfiguration configuration)
-        {
-            _Configuration = configuration;
-        }
-
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto optData)

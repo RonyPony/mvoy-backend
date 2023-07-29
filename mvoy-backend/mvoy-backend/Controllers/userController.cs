@@ -99,7 +99,7 @@ namespace mvoy_backend.Controllers
         //Login
 
         public IConfiguration _Configuration;
-        public userControllers(IConfiguration configuration)
+        public userController(IConfiguration configuration)
         {
             _Configuration = configuration;
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace mvoy.core.Models
 {
-    internal class Jwt
+    public class Jwt
     {
         public string Key { get; set; }
         public string Issuer { get; set; }

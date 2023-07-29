@@ -34,6 +34,15 @@ namespace mvoy.data.Services
             return _repo.getAllUsers();
         }
 
+        public Task<User> getUserByEmail(string email)
+        {
+            return _repo.getUserByEmailAsync(email);
+        }
+
+        public Task<User> GetUserById(Guid id)
+        {
+            return _repo.getUserByIdAsync(id);
+        }
 
         public Task removeContactInfo(int contactInfoId)
         {
@@ -49,5 +58,6 @@ namespace mvoy.data.Services
         {
             return await _repo.RemoveUser(userId);
         }
+
     }
 }

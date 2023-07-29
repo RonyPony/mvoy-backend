@@ -106,23 +106,34 @@ namespace mvoy_backend.Controllers
 
         [HttpPost]
         [Route("login")]
-        public dynamic Login([FromBody] object optData)
+        public async Task<IActionResult> Login([FromBody] LoginDto optData)
         {
-            var data = JsonConvert.DeserializeObject<dynamic>(optData.ToString());
+            //var data = JsonConvert.DeserializeObject<dynamic>(optData.ToString());
 
-            string user = data.usuario.ToString();
-            string password = data.password.ToString();
+            //string user = data.usuario.ToString();
+            //string password = data.password.ToString();
+            //Guid userId = await _userService.
+            User user = await _userService.getUserByEmail(optData.email);
+            
+            //usuario usuario = usuario.DB().Where(x => x.user == user && x.password == password).FirstOrDefault();
 
-            usuario usuario = usuario.DB().Where(x => x.user == user && x.password == password).FirstOrDefault();
-
-            if (usuario == null)
+            if (user == null)
             {
-                return new
+                return Unauthorized(new
+                {
+                    success = false,
+                    message = "Usuario no existe, favor registrate",
+                    result = ""
+                });
+            }
+            if (user.password!=optData.password)
+            {
+                return Unauthorized(new
                 {
                     success = false,
                     message = "Credenciales incorrectas",
-                    Result = ""
-                };
+                    result = ""
+                });
             }
             var jwt = _Configuration.GetSection("Jwt").Get<Jwt>();
             var claims = new[]
@@ -130,8 +141,8 @@ namespace mvoy_backend.Controllers
                 new Claim(JwtRegisteredClaimNames.Sub, jwt.Subject),
                  new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                   new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
-                  new Claim("id", usuario.idUsuario),
-                  new Claim("usuario", usuario.user)
+                  new Claim("id", user.Id.ToString()),
+                  new Claim("email", user.email)
 
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt.Key));
@@ -145,21 +156,15 @@ namespace mvoy_backend.Controllers
                 signingCredentials: signin
 
                );
-            return new
+            return Ok(new
             {
                 success = true,
                 message = "Exito",
                 result = new JwtSecurityTokenHandler().WriteToken(token)
-            };
+            });
+            
         }
     }
 
 
-
-
-
-
-
-
-}
 }

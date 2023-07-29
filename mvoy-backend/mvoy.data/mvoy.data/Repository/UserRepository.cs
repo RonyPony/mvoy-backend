@@ -62,6 +62,33 @@ namespace mvoy.data.Repository
             }
         }
 
+        public async Task<User> getUserByEmailAsync(string _email)
+        {
+            try
+            {
+                User user = _context.users.Where((ee)=>ee.email == _email).FirstOrDefault();
+                return user;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<User> getUserByIdAsync(Guid id)
+        {
+            try
+            {
+                User user = await _context.users.FindAsync(id);
+                return user;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         public async Task removeContactInfo(int contactInfoId)
         {

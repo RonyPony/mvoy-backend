@@ -23,6 +23,8 @@ namespace mvoy.core.Contracts
         public Task<int> CreateUserContactInfo(UserContactInfo UserInfo);
 
         public IEnumerable<User> getAllUsers();
+        public Task<User> getUserByIdAsync(Guid id);
+        public Task<User> getUserByEmailAsync(string email);
 
         /// <summary>
         /// Update a specific record of branch data.

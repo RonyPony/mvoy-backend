@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using mvoy.core.Enums;
+using Newtonsoft.Json;
 
 namespace mvoy.core.Models
 {
@@ -47,6 +48,11 @@ namespace mvoy.core.Models
             [Required]
             [Column("userType", TypeName = "varchar(80)")]
             public UserType UserKind { get; set; }
+
+        [JsonProperty("password")]
+        public string password { get; set; }
+        [JsonProperty("rol")]
+        public List<UserRole> roles { get; set; }
     }
     
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using mvoy.core.Interface;
 using mvoy.core.Models;
 using mvoy.data.DTOs;
@@ -8,6 +9,7 @@ using mvoy.data.Services;
 
 namespace mvoy_backend.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TripController : ControllerBase

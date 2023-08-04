@@ -18,18 +18,20 @@ namespace mvoy.data.Repository
         {
             _context = ctx;
         }
-        public async Task<bool> CreateUser(User user)
+        public async Task<User> CreateUser(User user)
         {
+            User finalUser = new User();
             try
             {
                 _context.users.Add(user);
-                
-                return await _context.SaveChangesAsync()==1;
+                await _context.SaveChangesAsync();
+                finalUser= user;
+                return finalUser;
             }
             catch (Exception ex)
             {
                 _context.ChangeTracker.Clear();
-                return false;
+                return finalUser;
             }
         }
 

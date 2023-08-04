@@ -14,7 +14,7 @@ namespace mvoy.core.Contracts
         /// Register a new record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<bool> CreateUser(User User);
+        public Task<User> CreateUser(User User);
 
         /// <summary>
         /// Register a new record of branch data.

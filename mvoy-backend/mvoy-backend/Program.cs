@@ -31,6 +31,8 @@ builder.Services.AddTransient<ITripService, TripService>();
 builder.Services.AddTransient<ITripRepository, TripRepository>();
 builder.Services.AddTransient<IVehicleRepository, VehicleRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+//builder.Services.AddTransient<IConfiguration>();
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
@@ -57,7 +59,9 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 
 app.MapControllers();

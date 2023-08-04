@@ -49,7 +49,7 @@ namespace mvoy.data.Services
             return _repo.removeContactInfo(contactInfoId);
         }
 
-        public async Task<bool> SaveUser(User user)
+        public async Task<User> SaveUser(User user)
         {
             return await _repo.CreateUser(user);
         }

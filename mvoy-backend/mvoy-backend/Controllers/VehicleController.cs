@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using mvoy.core.Enums;
 using mvoy.core.Interface;
 using mvoy.core.Models;
@@ -9,6 +10,7 @@ using System.Xml.Linq;
 
 namespace mvoy_backend.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class VehicleController : ControllerBase

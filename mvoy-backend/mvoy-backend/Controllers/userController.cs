@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using mvoy.core.Enums;
 using mvoy.core.Interface;
@@ -14,6 +15,7 @@ using System.Xml.Linq;
 
 namespace mvoy_backend.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class userController : ControllerBase
@@ -21,9 +23,10 @@ namespace mvoy_backend.Controllers
         private readonly IUserService _userService;
 
         public IConfiguration _Configuration;
-        public userController(IUserService srv)
+        public userController(IUserService srv,IConfiguration conf)
         {
             _userService = srv;
+            _Configuration = conf;
         }
         // GET: api/<userController>
         [HttpGet]
@@ -47,6 +50,7 @@ namespace mvoy_backend.Controllers
         }
 
         // POST api/<userController>
+        [AllowAnonymous]
         [HttpPost]
 
         public async Task<IActionResult> PostAsync([FromBody] RegisterDto user)
@@ -73,11 +77,11 @@ namespace mvoy_backend.Controllers
             usr.contactInfoId = await _userService.createContactInfo(contactInfo);
             usr.password = user.password;
             usr.roles = new List<UserRole> { baseRole};
-
-            if (await _userService.SaveUser(usr))
+            User createdUser = await _userService.SaveUser(usr);
+            if (createdUser.Id!=null)
             {
                 
-                return Ok(usr);
+                return Ok(createdUser);
             }
             else
             {
@@ -101,6 +105,7 @@ namespace mvoy_backend.Controllers
         }
 
         //Login
+        [AllowAnonymous]
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto optData)
@@ -132,7 +137,7 @@ namespace mvoy_backend.Controllers
                     result = ""
                 });
             }
-            var jwt = _Configuration.GetSection("Jwt").Get<Jwt>();
+             var jwt = _Configuration.GetSection("Jwt").Get<Jwt>();
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, jwt.Subject),

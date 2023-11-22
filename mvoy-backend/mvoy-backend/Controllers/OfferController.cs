@@ -41,6 +41,7 @@ namespace mvoy_backend.Controllers
             Offer obj = new Offer();
             obj.ClientId = value.ClientId;
             obj.motorcycleUserId = value.motorcycleUserId;
+            obj.tripId = value.tripId;
             obj.price = value.price;
             obj.fecha = DateTime.Now;
             return _OfferService.CreateOffer(obj);

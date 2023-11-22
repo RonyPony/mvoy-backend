@@ -26,6 +26,7 @@ namespace mvoy.data.DataContext
         public DbSet<User> users { get; set; }
         public DbSet<UserContactInfo> usersContactInfo { get; set; }
         public DbSet<Trip> trips { get; set; }
+         public DbSet<Offer> offers { get; set; }
 
         public DbSet<Vehicle> vehicles { get; set; }
     }

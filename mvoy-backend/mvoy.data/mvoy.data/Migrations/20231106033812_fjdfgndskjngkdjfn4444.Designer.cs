@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using mvoy.data.DataContext;
 
@@ -11,9 +12,10 @@ using mvoy.data.DataContext;
 namespace mvoy.data.Migrations
 {
     [DbContext(typeof(MvoyContext))]
-    partial class MvoyContextModelSnapshot : ModelSnapshot
+    [Migration("20231106033812_fjdfgndskjngkdjfn4444")]
+    partial class fjdfgndskjngkdjfn4444
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

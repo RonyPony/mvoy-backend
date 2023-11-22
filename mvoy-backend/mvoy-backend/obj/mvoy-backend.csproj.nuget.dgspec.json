@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy-backend\\mvoy-backend.csproj": {}
+    "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy-backend\\mvoy-backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy-backend\\mvoy-backend.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy-backend\\mvoy-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy-backend\\mvoy-backend.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy-backend\\mvoy-backend.csproj",
         "projectName": "mvoy-backend",
-        "projectPath": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy-backend\\mvoy-backend.csproj",
-        "packagesPath": "C:\\Users\\krosario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy-backend\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy-backend\\mvoy-backend.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy-backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\krosario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,17 +26,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj": {
-                "projectPath": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj"
+              "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj"
               },
-              "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.data\\mvoy.data\\mvoy.data.csproj": {
-                "projectPath": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.data\\mvoy.data\\mvoy.data.csproj"
+              "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.data\\mvoy.data\\mvoy.data.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.data\\mvoy.data\\mvoy.data.csproj"
               }
             }
           }
@@ -72,7 +74,7 @@
             },
             "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.1.38, )"
             },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
@@ -134,24 +136,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj",
         "projectName": "mvoy.core",
-        "projectPath": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj",
-        "packagesPath": "C:\\Users\\krosario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.core\\mvoy.core\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.core\\mvoy.core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\krosario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -159,6 +162,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -250,24 +254,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.data\\mvoy.data\\mvoy.data.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.data\\mvoy.data\\mvoy.data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.data\\mvoy.data\\mvoy.data.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.data\\mvoy.data\\mvoy.data.csproj",
         "projectName": "mvoy.data",
-        "projectPath": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.data\\mvoy.data\\mvoy.data.csproj",
-        "packagesPath": "C:\\Users\\krosario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.data\\mvoy.data\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.data\\mvoy.data\\mvoy.data.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.data\\mvoy.data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\krosario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -275,14 +280,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj": {
-                "projectPath": "C:\\Users\\krosario\\Documents\\GitHub\\mvoy-backend2\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj"
+              "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\GitHub\\mvoy-backend\\mvoy-backend\\mvoy.core\\mvoy.core\\mvoy.core.csproj"
               }
             }
           }
@@ -370,7 +376,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

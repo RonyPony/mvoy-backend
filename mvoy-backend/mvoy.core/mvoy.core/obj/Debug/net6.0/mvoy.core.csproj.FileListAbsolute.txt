@@ -12,3 +12,17 @@ C:\proyectos\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\refi
 C:\proyectos\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\mvoy.core.pdb
 C:\proyectos\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\mvoy.core.genruntimeconfig.cache
 C:\proyectos\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\ref\mvoy.core.dll
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\bin\Debug\net6.0\mvoy.core.deps.json
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\bin\Debug\net6.0\mvoy.core.runtimeconfig.json
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\bin\Debug\net6.0\mvoy.core.dll
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\bin\Debug\net6.0\mvoy.core.pdb
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\mvoy.core.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\mvoy.core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\mvoy.core.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\mvoy.core.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\mvoy.core.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\mvoy.core.dll
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\refint\mvoy.core.dll
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\mvoy.core.pdb
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\mvoy.core.genruntimeconfig.cache
+C:\Users\User\Documents\GitHub\mvoy-backend\mvoy-backend\mvoy.core\mvoy.core\obj\Debug\net6.0\ref\mvoy.core.dll

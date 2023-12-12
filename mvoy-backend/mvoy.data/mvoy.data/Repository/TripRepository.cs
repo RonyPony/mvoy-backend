@@ -38,7 +38,16 @@ namespace mvoy.data.Repository
 
         public async Task<Trip> getTripById(Guid id)
         {
-            return await _context.trips.FindAsync(id);
+            try
+            {
+                Trip trip = await _context.trips.FindAsync(id);
+                return trip;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public async Task<bool> RemoveTrip(Guid TripId)

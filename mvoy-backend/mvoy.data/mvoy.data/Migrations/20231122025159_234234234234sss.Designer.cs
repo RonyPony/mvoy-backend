@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using mvoy.data.DataContext;
 
@@ -11,9 +12,10 @@ using mvoy.data.DataContext;
 namespace mvoy.data.Migrations
 {
     [DbContext(typeof(MvoyContext))]
-    partial class MvoyContextModelSnapshot : ModelSnapshot
+    [Migration("20231122025159_234234234234sss")]
+    partial class _234234234234sss
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,36 +58,36 @@ namespace mvoy.data.Migrations
 
                     b.Property<string>("DestinyName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(80)")
+                        .HasColumnName("DestinyName");
 
                     b.Property<string>("OriginName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(80)")
+                        .HasColumnName("OriginName");
 
                     b.Property<string>("arrivingTime")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("clientId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("distance")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("distance")
+                        .HasColumnType("float");
 
                     b.Property<string>("driverId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("duration")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(80)")
+                        .HasColumnName("driverId");
+
+                    b.Property<double>("duration")
+                        .HasColumnType("float");
 
                     b.Property<bool>("isDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("leavingTime")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(80)")
+                        .HasColumnName("leavingTime");
 
                     b.Property<string>("price")
                         .IsRequired()

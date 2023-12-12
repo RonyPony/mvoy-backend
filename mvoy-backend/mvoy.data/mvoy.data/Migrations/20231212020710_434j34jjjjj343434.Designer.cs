@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using mvoy.data.DataContext;
 
@@ -11,9 +12,10 @@ using mvoy.data.DataContext;
 namespace mvoy.data.Migrations
 {
     [DbContext(typeof(MvoyContext))]
-    partial class MvoyContextModelSnapshot : ModelSnapshot
+    [Migration("20231212020710_434j34jjjjj343434")]
+    partial class _434j34jjjjj343434
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,8 +75,8 @@ namespace mvoy.data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("driverId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("driverId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("duration")
                         .IsRequired()

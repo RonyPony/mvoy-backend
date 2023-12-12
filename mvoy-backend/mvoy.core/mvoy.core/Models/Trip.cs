@@ -13,17 +13,17 @@ namespace mvoy.core.Models
     {
         [Key]
         public Guid Id { get; set; }
-        [Column("OriginName", TypeName = "varchar(80)")]
+       
         public string OriginName { get; set; }
-        [Column("DestinyName", TypeName = "varchar(80)")]
         public string DestinyName { get; set; }
-        public double duration{ get; set; }
-        public double distance { get; set; }
-        [Column("leavingTime", TypeName = "varchar(80)")]
+        public string duration{ get; set; }
+        public string distance { get; set; }
+       
         public string leavingTime { get; set; }
-        [Column("driverId", TypeName = "varchar(80)")]
-        public Guid driverId{ get; set; }
-        public string price { get; set; }
+       
+        public string? driverId { get; set; }
+        public Guid clientId { get; set; }
+        public string? price { get; set; }
         public string arrivingTime { get; set; }
         public bool isDeleted { get; set; }
     }

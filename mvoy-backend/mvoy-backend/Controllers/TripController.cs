@@ -9,7 +9,7 @@ using mvoy.data.Services;
 
 namespace mvoy_backend.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TripController : ControllerBase
@@ -47,14 +47,30 @@ namespace mvoy_backend.Controllers
             tripi.OriginName = trip.OriginName;
             tripi.DestinyName = trip.DestinyName;
             tripi.driverId = trip.driverId;
+            tripi.clientId = trip.clientId;
             tripi.isDeleted = false;
             return _TripService.SaveTrip(tripi);
         }
 
         // PUT api/<TripController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task Put(Guid id, [FromBody] tripDto trip)
         {
+            Trip tripi = new Trip();
+            tripi = await _TripService.getTripById(id);
+            tripi.price = trip.price;
+            tripi.distance = trip.distance;
+            tripi.duration = trip.duration;
+            tripi.leavingTime = trip.leavingTime;
+            tripi.arrivingTime = trip.arrivingTime;
+            tripi.OriginName = trip.OriginName;
+            tripi.DestinyName = trip.DestinyName;
+            tripi.driverId = trip.driverId;
+            tripi.clientId = trip.clientId;
+            tripi.isDeleted = false;
+
+            _TripService.updateTrip(tripi);
+
         }
 
         // DELETE api/<TripController>/5

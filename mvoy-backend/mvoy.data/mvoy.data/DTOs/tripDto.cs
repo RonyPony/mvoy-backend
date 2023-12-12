@@ -11,14 +11,16 @@ namespace mvoy.data.DTOs
 {
     public class tripDto
     {
-        public string arrivingTime { get; set; }    
-
         public string OriginName { get; set; }
         public string DestinyName { get; set; }
-        public double duration { get; set; }
-        public double distance { get; set; }
+        public string duration { get; set; }
+        public string distance { get; set; }
+
         public string leavingTime { get; set; }
-        public Guid driverId { get; set; }
-        public string price { get; set; }
+
+        public string? driverId { get; set; }
+        public Guid clientId { get; set; }
+        public string? price { get; set; }
+        public string arrivingTime { get; set; }
     }
 }

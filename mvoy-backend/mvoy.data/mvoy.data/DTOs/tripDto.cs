@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using mvoy.core.Enums;
 
 namespace mvoy.data.DTOs
 {
@@ -17,7 +18,7 @@ namespace mvoy.data.DTOs
         public string distance { get; set; }
 
         public string leavingTime { get; set; }
-
+        public StatusTrip statusTrip { get; set; }
         public string? driverId { get; set; }
         public Guid clientId { get; set; }
         public string? price { get; set; }

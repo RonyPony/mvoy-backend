@@ -11,9 +11,9 @@ namespace mvoy.data.DTOs
 {
     public class OfferDto
     {
-        public Guid ClientId { get; set; }
+        public Guid? ClientId { get; set; }
         public Guid tripId { get; set; }
-        public Guid motorcycleUserId { get; set; }
+        public Guid? motorcycleUserId { get; set; }
         public double price { get; set; }
     }
 }

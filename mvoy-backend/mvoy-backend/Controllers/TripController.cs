@@ -45,6 +45,7 @@ namespace mvoy_backend.Controllers
             tripi.leavingTime = trip.leavingTime;
             tripi.arrivingTime = trip.arrivingTime;
             tripi.OriginName = trip.OriginName;
+            tripi.statusTrip = mvoy.core.Enums.StatusTrip.Pendding;
             tripi.DestinyName = trip.DestinyName;
             tripi.driverId = trip.driverId;
             tripi.clientId = trip.clientId;
@@ -65,6 +66,7 @@ namespace mvoy_backend.Controllers
             tripi.arrivingTime = trip.arrivingTime;
             tripi.OriginName = trip.OriginName;
             tripi.DestinyName = trip.DestinyName;
+            tripi.statusTrip = trip.statusTrip;
             tripi.driverId = trip.driverId;
             tripi.clientId = trip.clientId;
             tripi.isDeleted = false;

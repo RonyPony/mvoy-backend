@@ -29,8 +29,9 @@ namespace mvoy_backend.Controllers
             _Configuration = conf;
         }
         // GET: api/<userController>
+        [AllowAnonymous]
         [HttpGet]
-        public IEnumerable<User> Get()
+        public IEnumerable<User> GetUsers()
         {
             return _userService.GetAllUsers();
         }
@@ -43,7 +44,7 @@ namespace mvoy_backend.Controllers
         }
 
         // GET api/<userController>/5
-        [HttpGet("{cedula}")]
+        [HttpGet("byCedula/{cedula}")]
         public string GetByCedula(string cedula)
         {
             return "value";

@@ -7,7 +7,7 @@ using mvoy.core.Models;
 
 namespace mvoy.data.DataContext
 {
-    public partial class MvoyContext : DbContext
+    public class MvoyContext : DbContext
     {
 
         public MvoyContext(DbContextOptions<MvoyContext> options)

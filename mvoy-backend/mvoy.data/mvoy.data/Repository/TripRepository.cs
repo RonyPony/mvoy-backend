@@ -1,4 +1,5 @@
-﻿using mvoy.core.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using mvoy.core.Contracts;
 using mvoy.core.Models;
 using mvoy.data.DataContext;
 using System;
@@ -49,6 +50,34 @@ namespace mvoy.data.Repository
                 throw;
             }
         }
+        public async Task<Trip> getTripByDriver(Guid id)
+        {
+            try
+            {
+                Trip trip = await _context.trips.Where(e=> e.driverId == id).FirstOrDefaultAsync();
+                return trip;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<Trip> getTripByClient(Guid id)
+        {
+            try
+            {
+                Trip trip = await _context.trips.Where(e => e.clientId == id).FirstOrDefaultAsync();
+                return trip;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
 
         public async Task<bool> RemoveTrip(Guid TripId)
         {

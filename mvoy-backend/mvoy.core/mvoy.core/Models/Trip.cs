@@ -19,10 +19,10 @@ namespace mvoy.core.Models
         public string DestinyName { get; set; }
         public string duration{ get; set; }
         public string distance { get; set; }
-       
+        public DateTime createDate { get; set; }
         public string leavingTime { get; set; }
        public StatusTrip statusTrip { get; set; }
-        public string? driverId { get; set; }
+        public Guid? driverId { get; set; }
         public Guid clientId { get; set; }
         public string? price { get; set; }
         public string arrivingTime { get; set; }

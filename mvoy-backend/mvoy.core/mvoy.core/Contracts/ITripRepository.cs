@@ -11,23 +11,10 @@ namespace mvoy.core.Contracts
     {
         public IEnumerable<Trip> getAllTrips();
         public Task<Trip> getTripById(Guid id);
-        /// <summary>
-        /// Register a new record of Trip data.
-        /// </summary>
-        /// <param name="Trip">Trip's request</param>
+        public Task<Trip> getTripBydriver(Guid id);
+        public Task<Trip> getTripByClient(Guid id);
         public Task<Trip> CreateTrip(Trip trip);
-
-        /// <summary>
-        /// Update a specific record of Trip data.
-        /// </summary>
-        /// <param name="Trip">Trip's request</param>
-        /// 
         public Task<Trip> UpdateTrip(Trip Trip);
-
-        /// <summary>
-        ///  Remove a specific record of Trip data.
-        /// </summary>
-        /// <param name="Trip">Trip's request</param>
         public Task<bool> RemoveTrip(Guid TripId);
 
     }

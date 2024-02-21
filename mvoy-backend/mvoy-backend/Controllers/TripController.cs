@@ -33,7 +33,16 @@ namespace mvoy_backend.Controllers
         {
             return await _TripService.getTripById(id);
         }
-
+        [HttpGet("driver")]
+        public async Task<Trip> GetDriverAsync(Guid id)
+        {
+            return await _TripService.getTripBydriver(id);
+        }
+        [HttpGet("client")]
+        public async Task<Trip> GetClientAsync(Guid id)
+        {
+            return await _TripService.getTripByClient(id);
+        }
         // POST api/<TripController>
         [HttpPost]
         public Task<Trip> Post([FromBody] tripDto trip)

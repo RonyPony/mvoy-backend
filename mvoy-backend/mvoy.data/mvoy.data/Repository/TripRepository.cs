@@ -3,6 +3,7 @@ using mvoy.core.Models;
 using mvoy.data.DataContext;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +51,32 @@ namespace mvoy.data.Repository
             }
         }
 
+        public async Task<Trip> getTripBydriver(Guid id)
+        {
+            try
+            {
+                Trip trip = await _context.trips.Where((e) => e.driverId == id).FirstOrDefaultAsync();
+                return trip;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<Trip> getTripByClient(Guid id)
+        {
+            try
+            {
+                Trip trip = await _context.trips.Where((e) => e.clientId == id).FirstOrDefaultAsync();
+                return trip;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public async Task<bool> RemoveTrip(Guid TripId)
         {
             try

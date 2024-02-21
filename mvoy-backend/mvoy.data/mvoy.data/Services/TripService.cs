@@ -31,6 +31,16 @@ namespace mvoy.data.Services
         {
             return _repo.getTripById(TripId);
         }
+        public Task<Trip> getTripByClient(Guid TripId)
+        {
+            return _repo.getTripByClient(TripId);
+        }
+        public Task<Trip> getTripBydriver(Guid TripId)
+        {
+            return _repo.getTripBydriver(TripId);
+        }
+
+        
 
         public Task<Trip> SaveTrip(Trip Trip)
         {

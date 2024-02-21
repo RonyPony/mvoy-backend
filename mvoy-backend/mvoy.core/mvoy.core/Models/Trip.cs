@@ -22,7 +22,7 @@ namespace mvoy.core.Models
        
         public string leavingTime { get; set; }
        public StatusTrip statusTrip { get; set; }
-        public string? driverId { get; set; }
+        public Guid? driverId { get; set; }
         public Guid clientId { get; set; }
         public string? price { get; set; }
         public string arrivingTime { get; set; }

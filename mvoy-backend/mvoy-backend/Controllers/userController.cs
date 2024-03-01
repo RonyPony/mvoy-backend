@@ -37,10 +37,11 @@ namespace mvoy_backend.Controllers
         }
 
         // GET api/<userController>/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Task<User> Get(Guid id)
         {
-            return "value";
+            return _userService.GetUserById(id);
         }
 
         // GET api/<userController>/5

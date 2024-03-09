@@ -36,7 +36,7 @@ namespace mvoy_backend.Controllers
 
         // POST api/<TripController>
         [HttpPost]
-        public Task<Trip> Post([FromBody] tripDto trip)
+        public async Task<IActionResult> Post([FromBody] tripDto trip)
         {
             Trip tripi = new Trip();
             tripi.price = trip.price;
@@ -50,7 +50,12 @@ namespace mvoy_backend.Controllers
             tripi.driverId = trip.driverId;
             tripi.clientId = trip.clientId;
             tripi.isDeleted = false;
-            return _TripService.SaveTrip(tripi);
+            Trip tp =await _TripService.SaveTrip(tripi);
+            if (tp!=null)
+            {
+                return Ok(tp);
+            }
+            return BadRequest("No se pudo guardar");
         }
 
         // PUT api/<TripController>/5

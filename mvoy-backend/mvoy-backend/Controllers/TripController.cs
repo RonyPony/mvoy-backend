@@ -34,6 +34,14 @@ namespace mvoy_backend.Controllers
             return await _TripService.getTripById(id);
         }
 
+
+        // GET api/<TripController>/5
+        [HttpGet("byUserId/{userId}")]
+        public async Task<Trip> GetbyUserAsync(Guid userId)
+        {
+            return await _TripService.getTripByUserId(userId);
+        }
+
         // POST api/<TripController>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] tripDto trip)

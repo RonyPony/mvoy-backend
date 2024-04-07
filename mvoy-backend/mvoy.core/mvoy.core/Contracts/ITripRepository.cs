@@ -11,6 +11,7 @@ namespace mvoy.core.Contracts
     {
         public IEnumerable<Trip> getAllTrips();
         public Task<Trip> getTripById(Guid id);
+        public Task<Trip> getTripByUserId(Guid userId);
         public Task<Trip> getTripByDriver(Guid id);
         public Task<Trip> getTripByClient(Guid id);
         /// <summary>

@@ -49,5 +49,10 @@ namespace mvoy.data.Services
         {
             return _repo.UpdateTrip(Trip);
         }
+
+        Task<Trip> ITripService.getTripByUserId(Guid userId)
+        {
+            return _repo.getTripByUserId(userId);
+        }
     }
 }

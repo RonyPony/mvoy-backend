@@ -110,5 +110,26 @@ namespace mvoy.data.Repository
                 return Trip;
             }
         }
+
+        public async Task<Trip> getTripByUserId(Guid userId)
+        {
+            Trip tmp = new Trip();
+            try
+            {
+                Trip? trip = await _context.trips.Where(e => e.clientId == userId).FirstOrDefaultAsync();
+                if (trip!=null)
+                {
+                    tmp = trip;
+                }
+
+                return tmp;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@ using System.Xml.Linq;
 
 namespace mvoy_backend.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class userController : ControllerBase

@@ -9,7 +9,7 @@ using mvoy.data.Services;
 
 namespace mvoy_backend.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class OfferController : ControllerBase

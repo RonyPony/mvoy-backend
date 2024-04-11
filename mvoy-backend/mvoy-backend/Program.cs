@@ -33,6 +33,7 @@ builder.Services.AddTransient<IVehicleRepository, VehicleRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IOfferService, OfferService>();
 builder.Services.AddTransient<IOfferRepository, OfferRepository>();
+
 //builder.Services.AddTransient<IConfiguration>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

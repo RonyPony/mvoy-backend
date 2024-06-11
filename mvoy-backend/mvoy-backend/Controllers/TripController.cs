@@ -36,10 +36,18 @@ namespace mvoy_backend.Controllers
 
 
         // GET api/<TripController>/5
-        [HttpGet("byUserId/{userId}")]
-        public async Task<Trip> GetbyUserAsync(Guid userId)
+        [HttpGet("price/calculate/{km}")]
+        public IActionResult GetPriceByDistanceAsync(double km)
         {
-            return await _TripService.getTripByUserId(userId);
+            return Ok(_TripService.getTripPriceByDistance(km));
+        }
+
+
+        // GET api/<TripController>/5
+        [HttpGet("byUserId/{userId}")]
+        public IEnumerable<Trip> GetbyUserAsync(Guid userId)
+        {
+            return _TripService.getTripByUserId(userId);
         }
 
         // POST api/<TripController>

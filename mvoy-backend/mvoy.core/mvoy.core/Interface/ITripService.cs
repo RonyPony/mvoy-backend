@@ -14,8 +14,8 @@ namespace mvoy.core.Interface
         public Task<Trip> updateTrip(Trip Trip);
         public Task<bool> DeleteTrip(Guid TripId);
         public Task<Trip> getTripById(Guid TripId);
-        public Task<Trip> getTripByUserId(Guid userId);
+        public double getTripPriceByDistance(double km);
+        public IEnumerable<Trip> getTripByUserId(Guid userId);
         public Task<Trip> getTripByDriver(Guid id);
-        public Task<Trip> getTripByClient(Guid id);
     }
 }

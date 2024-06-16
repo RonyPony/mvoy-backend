@@ -15,6 +15,7 @@ namespace mvoy_backend.Controllers
     public class OfferController : ControllerBase
     {
         private readonly IOfferService _OfferService;
+        private readonly ITripService _TripService; 
         public OfferController(IOfferService srv)
         {
             _OfferService = srv;
@@ -28,23 +29,31 @@ namespace mvoy_backend.Controllers
         }
 
         // GET api/<TripController>/5
-        [HttpGet("{id}")]
-        public async Task<Offer> GetAsync(Guid id)
+        [HttpGet("{tripId}")]
+        public IActionResult GetAsync(Guid id)
         {
-            return await _OfferService.getOfferById(id);
+            return Ok(_OfferService.getOfferById(id));
         }
 
         // POST api/<TripController>
         [HttpPost]
-        public Task<Offer> Post([FromBody] OfferDto value)
+        public async Task<IActionResult> PostAsync([FromBody] OfferDto value)
         {
+            if (value.price <= 0)
+            {
+                return BadRequest("Price must be specified");
+            }
+            Trip trip = await _TripService.getTripById(value.tripId);
+            if (trip!=null)
+            {
+                return NotFound("trip doesnt exist");
+            }
+
             Offer obj = new Offer();
-            obj.ClientId = value.ClientId;
-            obj.motorcycleUserId = value.motorcycleUserId;
             obj.tripId = value.tripId;
             obj.price = value.price;
-            obj.fecha = DateTime.Now;
-            return _OfferService.CreateOffer(obj);
+            obj.offerDate = DateTime.Now;
+            return Ok(_OfferService.CreateOffer(obj));
         }
 
         // PUT api/<TripController>/5

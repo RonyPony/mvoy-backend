@@ -10,7 +10,7 @@ namespace mvoy.core.Contracts
     public interface IOfferRepository
     {
         public IEnumerable<Offer> getAllOffers();
-        public Task<Offer> getOfferById(Guid id);
+        public List<Offer> getOfferById(Guid tripId);
         /// <summary>
         /// Register a new record of Trip data.
         /// </summary>

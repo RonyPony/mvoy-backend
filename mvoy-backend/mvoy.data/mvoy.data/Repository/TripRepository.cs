@@ -63,19 +63,6 @@ namespace mvoy.data.Repository
                 throw;
             }
         }
-        public async Task<Trip> getTripByClient(Guid id)
-        {
-            try
-            {
-                Trip trip = await _context.trips.Where(e => e.clientId == id).FirstOrDefaultAsync();
-                return trip;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
 
 
 
@@ -111,12 +98,12 @@ namespace mvoy.data.Repository
             }
         }
 
-        public async Task<Trip> getTripByUserId(Guid userId)
+        public IEnumerable<Trip> getTripByUserId(Guid userId)
         {
-            Trip tmp = new Trip();
+            IEnumerable<Trip> tmp= new List<Trip>();
             try
             {
-                Trip? trip = await _context.trips.Where(e => e.clientId == userId).FirstOrDefaultAsync();
+                List<Trip>? trip = _context.trips.Where(e => e.clientId == userId).ToList();
                 if (trip!=null)
                 {
                     tmp = trip;
@@ -131,5 +118,6 @@ namespace mvoy.data.Repository
 
             }
         }
+
     }
 }

@@ -10,7 +10,7 @@ namespace mvoy.core.Interface
     public interface IOfferService
     {
         public IEnumerable<Offer> getAllOffers();
-        public Task<Offer> getOfferById(Guid id);
+        public List<Offer> getOfferById(Guid tripId);
         public Task<Offer> CreateOffer(Offer offer);
         public Task<Offer> UpdateOffer(Offer offer);
         public Task<bool> RemoveOffer(Guid OfferId);

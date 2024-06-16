@@ -35,10 +35,6 @@ namespace mvoy.data.Services
         {
             return _repo.getTripByDriver(TripId);
         }
-        public Task<Trip> getTripByClient(Guid TripId)
-        {
-            return _repo.getTripByClient(TripId);
-        }
 
         public Task<Trip> SaveTrip(Trip Trip)
         {
@@ -50,9 +46,16 @@ namespace mvoy.data.Services
             return _repo.UpdateTrip(Trip);
         }
 
-        Task<Trip> ITripService.getTripByUserId(Guid userId)
+        public IEnumerable<Trip> getTripByUserId(Guid userId)
         {
             return _repo.getTripByUserId(userId);
+        }
+
+        public double getTripPriceByDistance(double km)
+        {
+            double kmPrice = 30.5;
+            double finalPrice = km * kmPrice;
+            return finalPrice;
         }
     }
 }

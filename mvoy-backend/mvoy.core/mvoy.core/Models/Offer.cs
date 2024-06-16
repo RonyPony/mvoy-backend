@@ -14,13 +14,11 @@ namespace mvoy.core.Models
         [Key]
         public Guid Id { get; set; }
         
-        public Guid? ClientId { get; set; }
         public Guid tripId { get; set; }
 
-        public Guid? motorcycleUserId { get; set; }
         public double price { get; set; }
  
-        public DateTime fecha { get; set; }
+        public DateTime offerDate { get; set; }
        
     }
 }

@@ -36,9 +36,9 @@ namespace mvoy.data.Repository
             return _context.offers.ToList();
         }
 
-        public async Task<Offer> getOfferById(Guid id)
+        public List<Offer> getOfferById(Guid id)
         {
-            return await _context.offers.FindAsync(id);
+            return  _context.offers.Where((rr)=>rr.tripId==id).ToList();
         }
 
         public async Task<bool> RemoveOffer(Guid TripId)

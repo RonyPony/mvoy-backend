@@ -27,7 +27,7 @@ namespace mvoy.data.Services
             return _repo.getAllOffers();
         }
 
-        public Task<Offer> getOfferById(Guid id)
+        public List<Offer> getOfferById(Guid id)
         {
             return _repo.getOfferById(id);
         }

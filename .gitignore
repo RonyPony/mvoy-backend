@@ -8,3 +8,8 @@
 *.exe
 *.pdb
 *.cache
+*.config
+*.v2
+*.v2
+/mvoy-backend/.vs
+/mvoy-backend/.vs

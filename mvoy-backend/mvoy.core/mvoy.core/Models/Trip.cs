@@ -25,6 +25,7 @@ namespace mvoy.core.Models
         public Guid? driverId { get; set; }
         public Guid clientId { get; set; }
         public string? price { get; set; }
+        public Guid? selectedOfferPrice { get; set; }
         public string arrivingTime { get; set; }
         public bool isDeleted { get; set; }
     }

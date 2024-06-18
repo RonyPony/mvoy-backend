@@ -16,9 +16,10 @@ namespace mvoy_backend.Controllers
     {
         private readonly IOfferService _OfferService;
         private readonly ITripService _TripService; 
-        public OfferController(IOfferService srv)
+        public OfferController(IOfferService srv, ITripService tripService)
         {
             _OfferService = srv;
+            _TripService = tripService;
         }
         
         // GET: api/<TripController>
@@ -44,7 +45,7 @@ namespace mvoy_backend.Controllers
                 return BadRequest("Price must be specified");
             }
             Trip trip = await _TripService.getTripById(value.tripId);
-            if (trip!=null)
+            if (value.tripId==null || trip==null)
             {
                 return NotFound("trip doesnt exist");
             }
@@ -53,7 +54,7 @@ namespace mvoy_backend.Controllers
             obj.tripId = value.tripId;
             obj.price = value.price;
             obj.offerDate = DateTime.Now;
-            return Ok(_OfferService.CreateOffer(obj));
+            return Ok(await _OfferService.CreateOffer(obj));
         }
 
         // PUT api/<TripController>/5
